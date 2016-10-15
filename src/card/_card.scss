@@ -1,0 +1,40 @@
+.card {
+  height: auto;
+  padding: 20px;
+
+  &:not(:last-child) {
+    border-right: 1px solid lightgray;
+  }
+
+  &:nth-child(2n) {
+    @include phone {
+      border-right-color: transparent !important;
+    }
+
+    @include tablet {
+      border-right-color: transparent !important;
+    }
+
+  }
+
+
+  .displayPic {
+    text-align: center;
+  }
+
+  .details {
+    padding: 5px;
+
+    a {
+      color: blue;
+    }
+
+    .price {
+      font-weight: bold;
+    }
+
+    .company {
+      color: darkgreen;
+    }
+  }
+}

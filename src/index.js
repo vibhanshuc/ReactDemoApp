@@ -1,4 +1,8 @@
 ReactDOM.render(
-  <TopNav/>,
+  <div>
+    <TopNav/>
+    <NavBar/>
+    <div id="cardContainer"/>
+  </div>,
   document.getElementById('root')
 );

@@ -8,6 +8,7 @@ const cssnano = require('gulp-cssnano');
 const htmlmin = require('gulp-htmlmin');
 const sourcemaps = require('gulp-sourcemaps');
 const uglifySaveLicense = require('uglify-save-license');
+const replace = require('gulp-replace');
 
 const conf = require('../conf/gulp.conf');
 
@@ -27,6 +28,7 @@ function build() {
     .pipe(sourcemaps.write('maps'))
     .pipe(jsFilter.restore)
     .pipe(cssFilter)
+    .pipe(replace('../bower_components/bootstrap-sass/assets/fonts/bootstrap', '//netdna.bootstrapcdn.com/bootstrap/latest/fonts'))
     .pipe(sourcemaps.init())
     .pipe(cssnano())
     .pipe(rev())

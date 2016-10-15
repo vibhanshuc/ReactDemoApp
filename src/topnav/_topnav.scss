@@ -1,0 +1,133 @@
+@import "../sass/mixins";
+@import "../sass/variables";
+
+nav {
+  min-height: 60px;
+  width: 100%;
+  background: #ECECEC;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  @include phone {
+    flex-direction: column;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+
+    @include phone {
+      margin: 0 20px;
+    }
+
+    .searchBoxWrap {
+      flex: 0.7;
+    }
+
+    .optionsWrap {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: flex-end;
+      margin-right: 30px;
+
+      @include tablet {
+        flex: 0.3;
+      }
+      @include phone {
+        flex: 0.3;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .logo {
+    height: 40px;
+    margin: 0 15px;
+
+    @include phone {
+      margin: 15px auto;
+    }
+  }
+
+  .icon-wrapper {
+    padding: 20px;
+    a {
+      color: $light-grey;
+    }
+  }
+
+  .dropdown {
+
+    margin-left: 10px;
+    .dropdown-menu {
+      margin-top: 13px;
+      min-width: 300px;
+      padding: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        right: 5px;
+        top: -10px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent $white transparent;
+        z-index: 9999;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 4px;
+        top: -11px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 11px 11px 11px;
+        border-color: transparent transparent #CCCCCC transparent;
+        z-index: 9998;
+      }
+
+      li.footer {
+        display: flex;
+        border-top: 1px solid rgba(0, 0, 0, 0.15);
+        justify-content: space-between;
+        align-items: initial;
+        background: #F3F3F3;
+
+        a {
+          margin: 10px;
+          color: $light-grey;
+          padding: 5px;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+.myAccount {
+  padding: 20px;
+  display: flex;
+
+  .myAccountInfo {
+    margin: 0 10px;
+    .name {
+      font-weight: bold;
+    }
+
+    .email {
+      color: $light-grey;
+    }
+
+    .privacy {
+      padding: 5px 0;
+    }
+  }
+}

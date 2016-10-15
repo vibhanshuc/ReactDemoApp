@@ -2,7 +2,7 @@ var TopNav = React.createClass({
   handleSearch: function () {
     var query = $('#searchInput').val();
     $.ajax({
-      url: 'https://demo1601615.mockable.io/results?query=' + query.split(' ').join('+'),
+      url: 'https://demo1601615.mockable.io/results?query=' + query.toLowerCase().split(' ').join('+'),
       type: 'GET',
       success: function (response) {
         ReactDOM.render(<CardContainer products={response.result} query={query}/>, document.getElementById('cardContainer'));
@@ -19,7 +19,7 @@ var TopNav = React.createClass({
         <div>
           <div className="searchBoxWrap">
             <div className="input-group">
-              <input id="searchInput" type="search" className="form-control"/>
+              <input id="searchInput" type="search" className="form-control" placeholder="iphone 7"/>
               <span className="input-group-btn">
                 <button className="btn btn-primary" type="button" onClick={this.handleSearch}>
                   <i className="glyphicon glyphicon-search"></i>
